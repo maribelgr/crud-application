@@ -36,24 +36,8 @@ function App() {
 
   const [createModal, setCreateModal] = useState(false);
 
-  //Hook para usuario Seleccionado
-  // const [selectedUser, setSelectedUser] = useState({
-  //   name: '',
-  //   birthdate: '',
-  // })
-
   const [name, setName] = useState("");
   const [birthdate, setBirthdate] = useState("");
-
-
-  // const handleChange = e => {
-  //   const {name, value} = e.target;
-  //   setSelectedUser(prevState => ({
-  //     ...prevState, 
-  //     [name]: value
-  //   }))
-  //   console.log(selectedUser);
-  // }
 
   const handleChange = (e) => {
     setName(e.currentTarget.value)
@@ -73,15 +57,6 @@ function App() {
       setData(response.data);
     })
   } 
-
-  // const postRequest = async () => {
-  //   await axios.post(baseUrl, selectedUser)
-  //   .then(response => {
-  //     setData(data.concat(response.data))
-  //     console.log(data);
-  //     openCloseCreateModal()
-  //   })
-  // }
 
 const postRequest = (name, birthdate) => {
     return fetch(`https://hello-world.innocv.com/api/user`, {
